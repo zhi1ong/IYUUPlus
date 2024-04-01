@@ -27,7 +27,7 @@ class Bark implements INotify
      */
     public function __construct(array $config)
     {
-        $this->bark_v2_server = $config['server'];
+        $this->bark_v2_server = $config['server'] . "/push";
         $this->device_key = $config['device_key'];
         if (!empty($config['group']))
             $this->group = $config['group'];
