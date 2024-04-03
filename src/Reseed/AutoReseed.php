@@ -1191,7 +1191,10 @@ class AutoReseed
                 case 'qBittorrent':
                     //如果用户的下载器设置自动种子管理，需要传入这个参数
                     //统一传入这个参数 2023年3月19日13:44:00
-                    $extra_options['autoTMM'] = 'false';  //关闭自动种子管理
+                    $extra_options['autoTMM'] = 'true';         // 自动种子管理
+                    $extra_options['skip_checking'] = 'true';   // 跳过校验
+                    $extra_options['tags'] = "辅种";             // 打辅种标签
+
                     // 添加任务校验后是否暂停
                     if (isset($extra_options['paused'])) {
                         $extra_options['paused'] = $extra_options['paused'] ? 'true' : 'false';
